@@ -43,6 +43,7 @@ Source:  %{name}-%{version}.tar.gz
 Requires: patterns-sailfish-device-configuration-%{rpm_device}
 
 # Generic dependencies
+%if 0%{?_obs_build_project:1}
 %if 0%{!?native_build:1}
 BuildRequires: droid-hal
 %endif
@@ -101,6 +102,7 @@ BuildRequires: hybris-libsensorfw-qt5
 %if 0%{!?native_build:1}
 BuildRequires: qt5-qpa-hwcomposer-plugin
 BuildRequires: qtscenegraph-adaptation
+%endif
 %endif
 
 %description
